@@ -98,7 +98,7 @@ ALTER TABLE 表名称 DROP FOREIGN KEY 外键的字段名
 清空表
 
 ```sql
-truncate table 表名称;
+TRUNCATE TABLE 表名称
 ```
 
 

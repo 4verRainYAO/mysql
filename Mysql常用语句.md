@@ -93,7 +93,7 @@ ALTER TABLE 表名称 DROP INDEX 索引的字段名
 ALTER TABLE 表名称 DROP FOREIGN KEY 外键的字段名
 ```
 
-### (4)truncate
+### (4)TRUNCATE
 
 清空表
 

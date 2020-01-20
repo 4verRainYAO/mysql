@@ -55,8 +55,8 @@ DROP TABLE if exits 表名
 #### 添加字段
 
 ```sql
-ALTER TABLE 表名称 ADD 字段名 字段约束
-ALTER TABLE 表名称 ADD COLUMN 字段名 字段约束
+ALTER TABLE 表名称 ADD 字段名 字段类型 字段约束
+ALTER TABLE 表名称 ADD COLUMN 字段名 字段类型 字段约束
 ```
 
 #### 修改表名
@@ -101,5 +101,73 @@ ALTER TABLE 表名称 DROP FOREIGN KEY 外键的字段名
 TRUNCATE TABLE 表名称
 ```
 
+## 2.DQL语句，数据查询语言
 
+### select
+
+```sql
+select * from table_name
+```
+
+#### group by 分组：
+
+```sql
+select * from table_name group by column_name
+SELECT count(*) ,depno from employee where depno=100 GROUP BY depno;
+SELECT count(*) ,depno from employee GROUP BY depno HAVING depno=100;
+```
+
+#### Having与Where的区别
+
+where必须放在group by之前，表示先过滤在分组；
+
+having必须放在group by之后，表示先分组在过滤，having还可以结合使用一些聚合函数：
+
+**sum()** 求和
+
+**avg()** 平均值
+
+**min()   max() count()**
+
+#### order by 排序：
+
+```sql
+SELECT * from employee ORDER BY depno DESC;//降序
+SELECT * from employee ORDER BY depno ASC;//升序
+SELECT * from employee ORDER BY depno ;//默认升序
+```
+
+## 3.DML语句，数据操作语言
+
+### insert
+
+```sql
+insert into employee values (8,'cxk',1000,100)
+insert into employee(name,salary,depno) VALUES ('laojiu',2000,101)
+```
+
+### update
+
+```sql
+update employee e set e.name='jitaimei' where e.id=4
+```
+
+### delete 
+
+```sql
+delete from employee where id=10
+DELETE FROM 表名称 WHERE 列名称 = 值
+```
+
+## 4.DCL语句，数据控制语言
+
+#### GRANT
+
+#### REVOKE
+
+#### COMMIT
+
+#### ROLLBACK
+
+主要为以上操作即对数据库安全性完整性等有操作的，可以简单的理解为权限控制等。 
 
